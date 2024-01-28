@@ -91,6 +91,19 @@ we see the following subexpressions:
 
 ### Bracket Expressions
 
+Bracket Expressions, also known as Positive Character Groups, represent a range of characters that we want to match in our string. When writing Bracket Expressions, we can include all characters that we want to match, but a more common practice is to use a hyphen
+
+ to represent a range of these characters. For example, [abcdef] has the same meaning as [a-f] and would indicate that we are looking for a string to include a or b or c or d or e or f. As long as the string includes one of the characters indicated, it will be considered a match.
+
+In our regex example for matching a URL:
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+we see the following Bracket Expressions:
+
+- [\da-z\.-] - this bracket expression indicates that any numerical digit, any lowercase letter a-z, a slash, a dot, or a hyphen will produce a match.
+
+- [a-z\.] - this bracket expression indicates that any lowercase letter a-z, a slash, or a dot will produce a match.
+
+- [\/\w \.-] - this bracket expression indicates that any slash, any alphanumeric character, a dot, or a hyphen will produce a match.
 
 
 ### Character Classes
