@@ -2,6 +2,35 @@
 
 Regular expressions, or regex, play a crucial role in web development, enabling developers to define specific search patterns within strings. In this tutorial, we'll delve into a particular regex that validates and matches URLs. Whether you're a web development student or a seasoned coder, understanding the components of this regex will enhance your ability to work with and create effective search patterns.
 
+## Overview
+
+### Regex for URL Validation
+
+The regular expression
+
+^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$
+
+is designed to validate URLs.
+
+### Breakdown:
+
+**Protocol (optional):**
+- ^(https?:\/\/)?: The URL may start with either "http://" or "https://", and the "s" in "https" is optional.
+
+**Subdomain (optional):**
+- ([\da-z\.-]+): Allows for alphanumeric characters, dots, and hyphens in the subdomain.
+
+**Domain:**
+- \.([a-z\.]{2,6}): Requires a period followed by a top-level domain (TLD) with 2 to 6 letters.
+
+**Path (optional):**
+- ([\/\w \.-]*)*: Supports optional paths and parameters in the URL, allowing a combination of forward slashes, alphanumeric characters, spaces, dots, and hyphens.
+
+**End of the URL:**
+- \/?$: The URL can end with an optional forward slash.
+
+In summary, the regular expression breaks down into distinct components for the protocol, subdomain, domain, path, and the end of the URL. It provides flexibility in validating various URL structures.
+
 ## Table of Contents
 
 - [Anchors](#anchors)
@@ -132,7 +161,17 @@ Understanding and utilizing character classes enhance the precision and flexibil
 
 ### Character Escapes
 
+In regular expressions (regex), Character Escapes are denoted using a backslash (\). They are employed when a character is not intended to be interpreted literally. For example, the curly brace { typically signifies the beginning of a quantifier. However, by preceding it with a backslash (\{), regex will interpret it as a literal opening curly brace rather than the start of a quantifier. This is particularly useful when searching for strings that include special characters. It's important to note that character escapes, along with all other special characters, lose their special functionality when included inside bracket expressions.
 
+Examining our regex example for matching a URL:
+
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+
+We can identify a specific instance where a character escape is utilized:
+
+- \. - In this case, it is used to explicitly indicate that the regex is seeking the character . literally and not as part of a character class.
+
+Understanding character escapes is crucial for accurately specifying literal characters within regex patterns, particularly when dealing with special characters that have reserved meanings in regex syntax.
 
 ## Author
 
