@@ -41,6 +41,35 @@ These anchors, in combination, provide precise control over the positioning of p
 
 ### Quantifiers
 
+Quantifiers in regular expressions (regex) determine the number of characters or expressions to match. Let's explore various types of quantifiers before delving into specific examples within our regex for matching URLs.
+
+- * - Matches the preceding pattern 0 or more times. For instance, /cat*/ matches "cat", "cats", and "catttt", but there are no matches in "dog".
+
+- + - Matches the preceding pattern 1 or more times. Example: /sun+/ matches "sun" in "sunny".
+
+- ? - Matches the preceding pattern 0 or 1 time. Example: /go?t?/ matches "got", "go", and "gotcha". If used immediately following another quantifier (*, +, ?, {}), it becomes non-greedy, matching the minimum number of times instead of the default maximum.
+
+- { n } - Matches the preceding pattern exactly n times. For example, /code{2}/ matches "codee" but not "code".
+
+- { n, } - Matches the preceding pattern at least n times. For instance, /w{3,}/ matches "www" and "wwww".
+
+- { n, x } - Matches the preceding pattern a minimum of n times and a maximum of x times. Example: /d{2,4}/ matches "dd", "ddd", and "dddd", but not "d" or "dddddd".
+
+Examining our regex example for matching URLs:
+
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+
+Let's identify the usage of quantifiers:
+
+- ? is employed to indicate that "https" may match 0 or 1 times, "https//" may match 0 or 1 times, and finally, / may match 0 or 1 times.
+
+- + signifies that the pattern [\da-z\.-] must match 1 or more times.
+
+- {2,6} indicates that the pattern [a-z\.] must match a minimum of 2 and a maximum of 6 times.
+
+- * signifies that [\/\w \.-] may match 0 or more times, and the entire group ([a-z\.]{2,6})([\/\w \.-]*) may match 0 or more times.
+
+Understanding these quantifiers enhances the versatility of regex, allowing you to precisely control the occurrence of patterns in your matching expressions.
 
 ### Grouping Constructs
 
