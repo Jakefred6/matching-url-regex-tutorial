@@ -108,6 +108,27 @@ we see the following Bracket Expressions:
 
 ### Character Classes
 
+In regular expressions (regex), Character Classes define sets of characters that can occur in a string to create a match. One common type of Character Class is the Bracket Expression, discussed in the previous section. Here are some additional commonly used character classes:
+
+- `.` - Matches any character except for a newline (`/n`).
+
+- `\d` - Matches any numerical digit.
+
+- `\w` - Matches any alphanumeric character from the Latin alphabet, including an underscore (`_`).
+
+- `\s` - Matches a single whitespace character, including tabs and line breaks. Note that for `\d`, `\w`, and `\s`, capitalizing the letter creates an inverse match.
+
+In our regex example for matching a URL:
+
+```/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/```
+
+We observe the application of character classes in the following instances:
+
+- `[\da-z\.-]` - Within this bracket expression (a character class in itself), `\d` is used to indicate that any numerical digit will produce a match.
+
+- `[\/\w \.-]` - Within this bracket expression, `\w` is used to indicate that any alphanumeric character from the Latin alphabet will produce a match.
+
+Understanding and utilizing character classes enhance the precision and flexibility of regex patterns, allowing you to specify diverse sets of characters for matching in your expressions.
 
 ### Character Escapes
 
