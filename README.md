@@ -1,5 +1,9 @@
 # Matching a URL using Regular Expressions - README
 
+Here is a code snippet from a Gist:
+
+- https://gist.github.com/Jakefred6/5c1654a80ab0619974eb9fcd79070928
+
 ## Overview
 
 This GitHub repository contains a comprehensive tutorial on matching URLs using regular expressions (`regex`). Whether you're a web development student or a seasoned coder, this tutorial aims to enhance your understanding of the components of a regex designed for validating and matching URLs.
