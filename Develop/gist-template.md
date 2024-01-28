@@ -73,6 +73,21 @@ Understanding these quantifiers enhances the versatility of regex, allowing you 
 
 ### Grouping Constructs
 
+Grouping Constructs are used in regex to check multiple parts or sections of a string for different requirements. By using parentheses (()) around different sections of the regex, we can create subexpressions that have separate requirements from each other.
+
+Unless instructed otherwise, Subexpressions look for exact matches. For example, given the subexpression (abc):(def), "abc:def" would match, where "cba:fed" would not.
+
+In our regex example for matching a URL:
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+we see the following subexpressions:
+
+- (https?:\/\/)
+
+- ([\da-z\.-]+)
+
+- ([a-z\.]{2,6})
+
+- ([\/\w \.-]*)
 
 ### Bracket Expressions
 
